@@ -1,9 +1,14 @@
-import './App.css';
+import Login from './components/Login'
+import Register from './components/Register'
+import WhatToWear from './components/WhatToWear'
+import Navbar from './components/NavBar'
 
 function App() {
   return (
     <div className="App">
-    Wellcom To Squares!
+      <Navbar />
+      {<Register /> && <Login />}
+      <WhatToWear/>
     </div>
   );
 }
