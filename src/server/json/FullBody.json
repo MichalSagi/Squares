@@ -1,0 +1,174 @@
+[
+    {
+        "style": "plain",
+        "color": "mix",
+        "img": "../assets/Squares (49).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "mix",
+        "img": "../assets/Squares (53).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "mix",
+        "img": "../assets/Squares (58).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "hue",
+        "img": "../assets/Squares (54).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "hue",
+        "img": "../assets/Squares (55).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "hue",
+        "img": "../assets/Squares (56).jpg", 
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "hue",
+        "img": "../assets/Squares (57).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (38).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (39).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (40).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (41).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (42).jpg"
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (43).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (44).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (45).jpg"
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (46).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (47).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (48).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (50).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (51).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (52).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (59).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (61).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (62).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (63).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (64).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (65).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "same",
+        "img": "../assets/Squares (66).jpg",
+        "stock": 10
+    },
+    {
+        "style": "wonder_women",
+        "color": "mix",
+        "img": "../assets/Squares (7).jpg",
+        "stock": 10
+    }
+]

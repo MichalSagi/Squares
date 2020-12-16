@@ -1,0 +1,50 @@
+[
+    {
+        "style": "plain",
+        "color": "light_blue",
+        "img": "../assets/Squares (36).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "blue",
+        "img": "../assets/Squares (20).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "yellow",
+        "img": "../assets/Squares (23).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "pink",
+        "img": "../assets/Squares (24).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "green",
+        "img": "../assets/Squares (28).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "black",
+        "img": "../assets/Squares (31).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "orange",
+        "img": "../assets/Squares (32).jpg",
+        "stock": 10
+    },
+    {
+        "style": "plain",
+        "color": "red",
+        "img": "../assets/Squares (35).jpg",
+        "stock": 10
+    }
+]
