@@ -1,34 +1,39 @@
-import React, { useContext, createContext } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
-const ItemsContext = createContext();
-
-export function useItems() {
-  return useContext(ItemsContext);
-}
+export const ItemsContext = createContext();
 
 export function ItemsProvider({ children }) {
-  const skirtsList = getSkirtsFromDB();
-  // const [hairs, setHairs] = getHairsFromDB();
-  // const [blouses, setBlouses] = getBlousesFromDB();
-  // const [fullDolls, setFullDolls] = getFullDollsFromDB();
+  const [skirtsList, setSkirtsList] = useState([]);
+  const [hairsList, setHairsList] = useState([]);
+  const [blousesList, setBlousesList] = useState([]);
+  const [fullDollsList, setFullDollsList] = useState([]);
+
+  useEffect(() => {
+    getSkirtsFromDB();
+    getHairsFromDB();
+    getBlousesFromDB();
+    getFullDollsFromDB();
+  }, []);
 
   const getSkirtsFromDB = async () => {
-    let result = await axios.get("http://localhost:3001/item/skirts");
-    console.log(result.data)
+    let result = await axios.get(`http://localhost:8080/item/skirts`);
+    setSkirtsList(result.data);
   };
-  // const getHairsFromDB = async () => {
-  //   let result = await axios.get("http://localhost:3001/item/hairs");
-  //   console.log(result.data)
-  // };
-  // const getBlousesFromDB = async () => {
-  //   let result = await axios.get("http://localhost:3001/item/blousess");
-  //   console.log(result.data)
-  // };
-  // const getFullDollsFromDB = async () => {
-  //   let result = await axios.get("http://localhost:3001/item/fullbodies");
-  //   console.log(result.data)
-  // };
+  const getHairsFromDB = async () => {
+    let result = await axios.get(`http://localhost:8080/item/hairs`);
+    setHairsList(result.data);
+  };
+  const getBlousesFromDB = async () => {
+    let result = await axios.get(`http://localhost:8080/item/blouses`);
+    setBlousesList(result.data);
+  };
+  const getFullDollsFromDB = async () => {
+    let result = await axios.get(`http://localhost:8080/item/fullbodies`);
+    setFullDollsList(result.data);
+  };
 
-  return <ItemsContext.Provider value={{ skirtsList,  }}>{children}</ItemsContext.Provider>;
+  const values = [skirtsList, hairsList, blousesList, fullDollsList];
+
+  return <ItemsContext.Provider value={values}>{children}</ItemsContext.Provider>;
 }

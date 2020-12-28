@@ -5,10 +5,10 @@ import squareDispaly from "../assets/Squares (2).jpg";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div style={{position: 'relative'}}>
       <MainCategoryCard />
-      <div style={{ hight: 400 }}>
-        <Image src={squareDispaly} alt="Squares display" style={{ margin: "50px", height: "300px", width: "auto" }} />
+      <div id='dashboardContainer'>
+        <Image src={squareDispaly} alt="Squares display" />
       </div>
     </div>
   );

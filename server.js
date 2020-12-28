@@ -6,7 +6,7 @@ require("dotenv").config()
 // const userRouter = require("./server/router/User")
 const itemsRouter = require('./src/server/routes/Items')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/SquaresDB', { useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/squaresDB', { useUnifiedTopology: true , useNewUrlParser: true})
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
 
 // app.use("/auth", authRoutes)
 // app.use("/user", userRouter)
-app.use('/items', itemsRouter)
+app.use('/item', itemsRouter)
 
 const { PORT } = process.env
 app.listen(PORT, () => { console.log(`Server is up on port ${PORT}`)
