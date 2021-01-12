@@ -6,6 +6,7 @@ const HairSchema = new Schema({
   color: String,
   img: String,
   stock: Number,
+  price: Number
 })
 
 const Hair = mongoose.model('Hair', HairSchema)

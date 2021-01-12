@@ -12,8 +12,13 @@ itemRouter.get("/skirts", async (req, res) => {
 });
 
 itemRouter.get("/skirts/:id", async (req, res) => {
-  const skirt =  await Skirt.findById(req.params.id);
+  const skirt = await Skirt.findById(req.params.id);
   res.send(skirt);
+});
+
+itemRouter.put("/skirts/:id", async (req, res) => {
+  const skirtUpdated = await Skirt.findOneAndUpdate({ _id: req.params.id }, { stock: req.body.stock, price: req.body.price }, { new: true });
+  res.send(skirtUpdated);
 });
 
 itemRouter.post("/skirts", function (req, res) {
@@ -31,8 +36,13 @@ itemRouter.get("/hairs", async (req, res) => {
 });
 
 itemRouter.get("/hairs/:id", async (req, res) => {
-  const hair =  await Hair.findById(req.params.id);
+  const hair = await Hair.findById(req.params.id);
   res.send(hair);
+});
+
+itemRouter.put("/hairs/:id", async (req, res) => {
+  const hairtUpdated = await Hair.findOneAndUpdate({ _id: req.params.id }, { stock: req.body.stock, price: req.body.price }, { new: true });
+  res.send(hairtUpdated);
 });
 
 itemRouter.post("/hairs/:id", function (req, res) {
@@ -43,7 +53,6 @@ itemRouter.post("/hairs/:id", function (req, res) {
   });
 });
 
-
 itemRouter.get("/blouses", async (req, res) => {
   await Blouse.find({}, function (err, blouses) {
     res.send(blouses);
@@ -51,8 +60,13 @@ itemRouter.get("/blouses", async (req, res) => {
 });
 
 itemRouter.get("/blouses/:id", async (req, res) => {
-  const blouse =  await Blouse.findById(req.params.id);
+  const blouse = await Blouse.findById(req.params.id);
   res.send(blouse);
+});
+
+itemRouter.put("/blouses/:id", async (req, res) => {
+  const blouseUpdated = await Blouse.findOneAndUpdate({ _id: req.params.id }, { stock: req.body.stock, price: req.body.price }, { new: true });
+  res.send(blouseUpdated);
 });
 
 itemRouter.post("/blouses", function (req, res) {
@@ -70,8 +84,13 @@ itemRouter.get("/fullbodies", async (req, res) => {
 });
 
 itemRouter.get("/fullbodies/:id", async (req, res) => {
-  const fullbody =  await FullBody.findById(req.params.id);
+  const fullbody = await FullBody.findById(req.params.id);
   res.send(fullbody);
+});
+
+itemRouter.put("/fullbodies/:id", async (req, res) => {
+  const fullbodyUpdated = await FullBody.findOneAndUpdate({ _id: req.params.id }, { stock: req.body.stock, price: req.body.price }, { new: true });
+  res.send(fullbodyUpdated);
 });
 
 itemRouter.post("/fullbodies", function (req, res) {
@@ -81,5 +100,12 @@ itemRouter.post("/fullbodies", function (req, res) {
     res.send(ex);
   });
 });
+
+// itemRouter.put("/fullbodies/:id", (req, res) => {
+//   const {img } = req.body
+//   FullBody.findByIdAndUpdate( req.params.id, { img: newImg }, {new: true}).exec(function(err, fullbody) {
+//     res.send({img})
+//   })
+// });
 
 module.exports = itemRouter;

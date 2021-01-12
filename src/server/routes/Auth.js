@@ -1,67 +1,52 @@
-const express = require('express')
-const authRouter = express.Router()
-const bcrypt = require('bcrypt')
-const validator = require('validator').default
-// const { mongoClient } = require('../dataSources/DataSources')
+const express = require("express");
+const authRouter = express.Router();
+const bcrypt = require("bcrypt");
+const validator = require("validator").default;
+const User = require("../models/User");
 
-// authRouter.post('/signup', async (req, res) => {
-//     const { userName, password, email } = req.body
+authRouter.post("/login", async (req, res) => {
+  const { userName, password, userEmail } = req.body;
+  console.log(req.body)
+  const isUserInDB = await User.find({ userName: userName, userEmail: userEmail });
+  // console.log(isUserInDB)
+  if (!isUserInDB.length) {
+    res.status(401).send("User not found");
+  }
+  if (isUserInDB) {
+    const hash = isUserInDB[0].password;
+    (await bcrypt.compare(password, hash))
+      ? res.status(202).send({ userId: isUserInDB[0]._id, msg: `Welcome back!` })
+      : res.status(401).send("password doesn't match");
+  }
+});
 
-//     if (!validator.isEmail(email)) {
-//         res.status(400).send('The email address was invalid please try again')
-//     } else {
-//         const isUserNameTaken = await mongoClient.getUserByName(userName)
-//         if (isUserNameTaken) {
-//             res.status(409).send('The user name is already taken')
-//         } else {
-//             const newUser = mongoClient
-//                 .addUser({
-//                     userName,
-//                     password: await bcrypt.hash(password, 10),
-//                     email,
-//                     birthday, 
-//                     orders: [],
-//                 })
+authRouter.post("/register", async (req, res) => {
+  const { userName, password, userEmail, birthday, country, city, street, apartment, zipCode, admin } = req.body;
+  if (!validator.isEmail(userEmail)) {
+    res.status(400).send("The email address was invalid please try again");
+  } else {
+    const isUserNameTaken = await User.find({ userName: userName });
+    if (isUserNameTaken.length) {
+      res.status(409).send("The user name is already taken");
+    } else {
+      const newUser = new User({
+        userName: userName,
+        password: await bcrypt.hash(password, 10),
+        birthday: birthday,
+        userEmail: userEmail,
+        address: { country: country, city: city, street: street, apartment: apartment, zipCode: zipCode },
+        admin: admin,
+      });
+      newUser
+        .save()
+        .then((user) => {
+          res.status(201).send({ userId: user._id, msg: "success" });
+        })
+        .catch((error) => {
+          res.status(500).send("Oops the user couldn't be saved please try again");
+        });
+    }
+  }
+});
 
-//             // res.cookie(newUser.userName, await bcrypt.hash(JSON.stringify(newUser._id), 10), { maxAge: (24 * 60 * 60 * 1000) + Date.now(), domain: 'localhost' })
-
-//             newUser
-//                 .save()
-//                 .then(user => {
-//                     res
-//                         .status(201)
-//                         .send({ userId: user._id, msg: 'success' })
-//                 })
-//                 .catch(error => {
-//                     res
-//                         .status(500)
-//                         .send('Oops the user couldn\'t be saved please try again')
-//                 })
-//         }
-//     }
-// })
-
-// authRouter.post('/login', async (req, res) => {
-//     const { userName, password } = req.body
-//     const isUserNameInDB = await mongoClient.getUserByName(userName)
-//     if (!isUserNameInDB) {
-//         res.status(401).send('User name not found')
-//     } else {
-//         const hash = isUserNameInDB.password
-//         await bcrypt.compare(password, hash) ?
-//             res.status(202).send({ userId: isUserNameInDB._id, msg: 'Welcome back!' })
-//             :
-//             res.status(401).send('password doesn\'t match')
-//     }
-// })
-
-// authRouter.post('/cookie', async (req, res) => {
-//     const { cookie } = req.body
-    
-//     const result = await mongoClient.isCookieValid(cookie).catch(e => false)
-//     result
-//         ? res.status(200).send(true)
-//         : res.status(401).send(false)
-// })
-
-// module.exports = authRouter
+module.exports = authRouter;

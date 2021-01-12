@@ -1,25 +1,94 @@
-import React, { useState } from "react";
-// import { useLocation } from 'react-router-dom';
-import { Link } from "react-router-dom";
-import { Row, Col } from 'antd'
+import React, { useState, useContext } from "react";
+import { useLocation } from "react-router-dom";
+import { UserContext } from "../contexts/UserProvider";
+// import { Link } from "react-router-dom";
+import { Space, Input, Form, Button } from "antd";
 
 export default function Login() {
-  // const location = useLocation();
+  const location = useLocation();
   const [state, setState] = useState({
     userName: "",
     password: "",
     userEmail: "",
     birthday: "",
-    address: "",
+    address: {
+      country: "",
+      city: "",
+      street: "",
+      apartment: 0,
+      zipCode: 0,
+    },
   });
-  const [messageState, setMessageState] = useState({
-    userMessage: "user name needs to be more then 3 letters", 
-    passwordMessage: "password needs to be more then 3 letters", 
-    emailMessage: "email needs to be more then 6 letters",
 
-  })
-  return (<div>
-        {/* <Paper elevation={0} square={true} style={{ width: "100vw", height: "100vh" }}>
+  const page = location.pathname.split("/")[2];
+  // const [isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+  const [checkUser, saveUser] = useContext(UserContext);
+
+  const onFinish = (values) => {
+    console.log(page)
+    if (page === "login") {
+      setState({ userName: values.userName, password: values.password, userEmail: values.userEmail });
+      checkUser(state);
+      // isLoggedIn = true;
+    }
+    if (page === "register") {
+      setState({
+        userName: values.userName,
+        password: values.password,
+        userEmail: values.userEmail,
+        birthday: values.birthday,
+        address: {
+          country: values.country,
+          city: values.city,
+          street: values.street,
+          apartment: values.apartment,
+          zipCode: values.zipCode,
+        },
+      });
+      saveUser(state)
+      // isLoggedIn = true;
+    }
+  };
+
+  return (
+    <div>
+      <Space direction="vertical">
+        <Form onFinish={onFinish}>
+          <Form.Item
+            name="userName"
+            rules={[
+              {
+                required: true,
+                message: "Please enter your name",
+              },
+            ]}
+          >
+            <Input placeholder="Name" />
+          </Form.Item>
+          <Form.Item
+            name="userEmail"
+            rules={[
+              {
+                required: true,
+                type: "email",
+                message: "Please enter your email",
+              },
+            ]}
+          >
+            <Input placeholder="E-Mail" />
+          </Form.Item>
+          <Form.Item name="password">
+            <Input.Password placeholder="Password" />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              {page === "login" ? "Submit" : "Register"}
+            </Button>
+          </Form.Item>
+        </Form>
+      </Space>
+
+      {/* <Paper elevation={0} square={true} style={{ width: "100vw", height: "100vh" }}>
           <Grid container justify="center" alignItems="center" direction="column">
             <Grid item>
               <Typography variant="h4" style={{ marginTop: 30, paddingTop: 100 }}>
@@ -86,8 +155,6 @@ export default function Login() {
             </form>
           </Grid>
         </Paper> */}
-      </div>
-    );
+    </div>
+  );
 }
-
-

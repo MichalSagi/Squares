@@ -6,6 +6,7 @@ const SkirtSchema = new Schema({
   color: String,
   img: String,
   stock: Number,
+  price: Number
 })
 
 const Skirt = mongoose.model('Skirt', SkirtSchema)

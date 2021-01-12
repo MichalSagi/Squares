@@ -6,6 +6,7 @@ const FullBodySchema = new Schema({
   color: String,
   img: String,
   stock: Number,
+  price: Number
 })
 
 const FullBody = mongoose.model('FullBody',  FullBodySchema)

@@ -2,11 +2,11 @@ const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 require("dotenv").config()
-// const authRoutes = require("./server/router/Auth.js")
-// const userRouter = require("./server/router/User")
-const itemsRouter = require('./src/server/routes/Items')
+const authRoutes = require('./src/server/routes/Auth.js')
+const userRouter = require("./src/server/routes/User.js")
+const itemsRouter = require('./src/server/routes/Items.js')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/squaresDB', { useUnifiedTopology: true , useNewUrlParser: true})
+mongoose.connect('mongodb://localhost/squaresDB', { useUnifiedTopology: true , useNewUrlParser: true, useFindAndModify: false})
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -19,8 +19,8 @@ app.use(function (req, res, next) {
   next()
 });
 
-// app.use("/auth", authRoutes)
-// app.use("/user", userRouter)
+app.use("/auth", authRoutes)
+app.use("/user", userRouter)
 app.use('/item', itemsRouter)
 
 const { PORT } = process.env

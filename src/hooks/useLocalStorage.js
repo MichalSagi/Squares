@@ -4,8 +4,8 @@ export default function useLocalStorage(key, initialValue) {
   const localStorageName = "squares-" + key ;
 
   const [value, setValue] = useState(() => {
-    const jsonValue = localStorage.getItem(localStorageName);
-    if (jsonValue != null) return JSON.parse(jsonValue);
+    const jsonValue = localStorage.getItem(localStorageName) 
+    if (jsonValue != null)  return JSON.parse(jsonValue)
     if (typeof initialValue === "function") {
       return initialValue();
     } else {
