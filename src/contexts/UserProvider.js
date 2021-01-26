@@ -2,10 +2,6 @@ import React, { createContext, useState } from "react";
 import axios from "axios";
 
 export const UserContext = createContext();
-// export const isLoggedIn = createContext({
-//   isLoggedIn: false,
-//   isLoggedIn: () => {},
-// });
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState({});
@@ -16,7 +12,6 @@ export function UserProvider({ children }) {
   };
 
   const checkUser = async (user) => {
-    // console.log(user)
     const result = await axios.post(`http://localhost:3000/auth/login`, user);
     const id = result.data[0]._Id;
     getUser(id);

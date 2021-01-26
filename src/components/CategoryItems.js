@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { Card, Space } from "antd";
 import { ShoppingOutlined, ShoppingFilled, HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { ItemsContext } from "../contexts/ItemsProvider";
-import { UserContext } from "../contexts/UserProvider";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function CategoryItems() {
