@@ -1,5 +1,25 @@
 .App {
   text-align: center;
+  /* position: relative; */
+  background-color: #fff0f1;
+}
+
+.Header {
+  background-color: #fff0f1;
+}
+
+.sider {
+  text-align: start;
+  background-color: #fff0f1
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 16px;
+}
+
+body {
   background-color: #fff0f1;
 }
 

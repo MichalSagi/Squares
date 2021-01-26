@@ -1,26 +1,34 @@
 [
     {
+        "type": "hair",
         "style": "cuckooes",
         "color": "yellow",
         "img": "../assets/Squares (8).jpg",
-        "stock": 10
+        "stock": 10,
+        "price": 35
     },
     {
+        "type": "hair",
         "style": "long",
         "color": "black",
         "img": "../assets/Squares (5).jpg",
-        "stock": 10
+        "stock": 10,
+        "price": 35
     },
     {
+        "type": "hair",
         "style": "short",
         "color": "orange",
         "img": "../assets/Squares (6).jpg",
-        "stock": 10
+        "stock": 10,
+        "price": 35
     },
     {
+        "type": "hair",
         "style": "braid",
         "color": "purple",
         "img": "../assets/Squares (7).jpg",
-        "stock": 10
+        "stock": 10,
+        "price": 35
     }
 ]

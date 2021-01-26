@@ -11,10 +11,10 @@ export default function MainCategoryCard() {
   const [page, setPage] = useState();
   const history = useHistory();
   const cardsCategory = [
+    { src: squareDispaly, title: "Full Doll" },
     { src: HairPic, title: "Hair" },
     { src: BlousePic, title: "Blouse" },
-    { src: SkirtPic, title: "Skirt" },
-    { src: squareDispaly, title: "Full Doll" },
+    { src: SkirtPic, title: "Skirt" }
   ];
 
   const handleOnClick = useCallback(() => history.push(`/item/${page.toLowerCase()}s`), [history, page]);

@@ -9,81 +9,76 @@ import useLocalStorage from "../hooks/useLocalStorage";
 export default function CategoryItems() {
   const location = useLocation();
   const page = location.pathname.split("/")[2];
-  const [skirtsList, hairsList, blousesList, fullBodyList] = useContext(ItemsContext);
+  const [dullsList] = useContext(ItemsContext);
   const [items, setItems] = useState([]);
   const { Meta } = Card;
-  const [favoritesList, setFavoritesList] = useLocalStorage("favorites", 0);
+  const [favoritesList, setFavoritesList] = useLocalStorage("favorites", []);
   const [favorites, setFavorites] = useState([]);
-  const [shoppingList, setShoppingList] = useLocalStorage("shopping", 0);
+  const [shoppingList, setShoppingList] = useLocalStorage("shopping", []);
   const [shoppingItems, setShoppingItems] = useState([]);
-
-  // const [user] = useContext(UserContext);
-  // console.log(user)
 
   useEffect(() => {
     if (favoritesList !== 0) {
       setFavorites(favoritesList);
     }
-  }, [page]);
+  }, [favoritesList]);
 
   useEffect(() => {
     if (shoppingList !== 0) {
       setShoppingItems(shoppingList);
     }
-  }, [page]);
+  }, []);
 
   useEffect(() => {
     switch (page) {
       case "skirts":
-        setItems(skirtsList);
+        setItems(dullsList.filter((item) => item.type === "skirt"));
         break;
       case "hairs":
-        setItems(hairsList);
+        setItems(dullsList.filter((item) => item.type === "hair"));
         break;
       case "blouses":
-        setItems(blousesList);
+        setItems(dullsList.filter((item) => item.type === "blouse"));
         break;
       case "full dolls":
-        setItems(fullBodyList);
+        setItems(dullsList.filter((item) => item.type === "fullBody"));
         break;
       default:
         console.log("no items");
     }
-  }, [page, skirtsList, hairsList, blousesList, fullBodyList]);
+  }, [dullsList]);
 
   const addToFavorites = ({ currentTarget }) => {
     const lovedItemID = currentTarget.getAttribute("value");
     const choosenItem = items.find((item) => item._id === lovedItemID);
-    let arrayOfFavorites = favorites;
     let addArray = true;
-    arrayOfFavorites.map((item, i) => {
+    favorites.map((item, i) => {
       if (item._id === choosenItem._id) {
-        arrayOfFavorites.splice(i, 1);
+        favorites.splice(i, 1);
         addArray = false;
       }
     });
     if (addArray) {
-      arrayOfFavorites.unshift(choosenItem);
+      favorites.unshift(choosenItem);
     }
-    setFavorites([...arrayOfFavorites]);
+    setFavorites([...favorites]);
     setFavoritesList(favorites);
   };
 
   const addToShoppingCart = ({ currentTarget }) => {
     const shoppedItem = currentTarget.getAttribute("value");
     const choosenItem = items.find((item) => item._id === shoppedItem);
-    let shoppingArray = shoppingItems;
     let addArray = true;
-    shoppingArray.map((item, i) => {
+    shoppingItems.map((item, i) => {
       if (item._id === choosenItem._id) {
-        shoppingArray.splice(i, 1);
+        shoppingItems.splice(i, 1);
         addArray = false;
       }
     });
     if (addArray) {
-      shoppingArray.unshift(choosenItem);
+      shoppingItems.unshift({ ...choosenItem, quantity: 1 });
     }
-    setShoppingItems([...shoppingArray]);
+    setShoppingItems([...shoppingItems]);
     setShoppingList(shoppingItems);
   };
 
@@ -94,7 +89,7 @@ export default function CategoryItems() {
           <Card
             id={item.id}
             style={{ width: 300, margin: "20px" }}
-            cover={<img alt={item.color} src={item.img} />}
+            cover={<img alt={item.color} src={item.src} />}
             actions={[
               favorites.some((f) => f._id === item._id) ? (
                 <HeartFilled key="loved" value={item._id} onClick={addToFavorites} style={{ color: "#c41d7f" }} />
