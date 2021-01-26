@@ -1,302 +1,402 @@
-    [
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "light_blue",
-            "src": "../assets/Squares (36).jpg"
-        },
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "blue",
-            "src": "../assets/Squares (20).jpg"
-        },
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "yello",
-            "src": "../assets/Squares (23).jpg"
-        },
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "pink",
-            "src": "../assets/Squares (24).jpg"
-        },
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "green",
-            "src": "../assets/Squares (28).jpg"
-        },
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "black",
-            "src": "../assets/Squares (31).jpg"
-        },
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "orange",
-            "src": "../assets/Squares (32).jpg"
-        },
-        {
-            "part": "skirt",
-            "style": "plain",
-            "color": "red",
-            "src": "../assets/Squares (35).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "blue",
-            "src": "../assets/Squares (26).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "yello",
-            "src": "../assets/Squares (22).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "pink",
-            "src": "../assets/Squares (25).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "green",
-            "src": "../assets/Squares (29).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "black",
-            "src": "../assets/Squares (30).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "orange",
-            "src": "../assets/Squares (33).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "red",
-            "src": "../assets/Squares (34).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "light_blue",
-            "src": "../assets/Squares (37).jpg"
-        },
-        {
-            "part": "blouse",
-            "style": "plain",
-            "color": "pale_blue",
-            "src": "../assets/Squares (21).jpg"
-        },
-        {
-            "part": "hair",
-            "style": "cuckooes",
-            "color": "yello",
-            "src": "../assets/Squares (8).jpg"
-        },
-        {
-            "part": "hair",
-            "style": "long",
-            "color": "black",
-            "src": "../assets/Squares (5).jpg"
-        },
-        {
-            "part": "hair",
-            "style": "short",
-            "color": "orange",
-            "src": "../assets/Squares (6).jpg"
-        },
-        {
-            "part": "hair",
-            "style": "braid",
-            "color": "purple",
-            "src": "../assets/Squares (7).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "mix",
-            "src": "../assets/Squares (49).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "mix",
-            "src": "../assets/Squares (53).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "mix",
-            "src": "../assets/Squares (58).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "hue",
-            "src": "../assets/Squares (54).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "hue",
-            "src": "../assets/Squares (55).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "hue",
-            "src": "../assets/Squares (56).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "hue",
-            "src": "../assets/Squares (57).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (38).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (39).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (40).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (41).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (42).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (43).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (44).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (45).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (46).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (47).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (48).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (50).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (51).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (52).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (59).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (61).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (62).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (63).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (64).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (65).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "plain",
-            "color": "same",
-            "src": "../assets/Squares (66).jpg"
-        },
-        {
-            "part": "full_body",
-            "style": "wonder_women",
-            "color": "purple",
-            "src": "../assets/Squares (7).jpg"
-        }
-    ]
+[
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "blue",
+        "src": "../assets/Squares (26).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "yellow",
+        "src": "../assets/Squares (22).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "pink",
+        "src": "../assets/Squares (25).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "green",
+        "src": "../assets/Squares (29).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "black",
+        "src": "../assets/Squares (30).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "orange",
+        "src": "../assets/Squares (33).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "red",
+        "src": "../assets/Squares (34).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "light_blue",
+        "src": "../assets/Squares (37).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "blouse",
+        "style": "plain",
+        "color": "pale_blue",
+        "src": "../assets/Squares (21).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "hair",
+        "style": "cuckooes",
+        "color": "yellow",
+        "src": "../assets/Squares (8).jpg",
+        "stock": 10,
+        "price": 35
+    },
+    {
+        "type": "hair",
+        "style": "long",
+        "color": "black",
+        "src": "../assets/Squares (5).jpg",
+        "stock": 10,
+        "price": 35
+    },
+    {
+        "type": "hair",
+        "style": "short",
+        "color": "orange",
+        "src": "../assets/Squares (6).jpg",
+        "stock": 10,
+        "price": 35
+    },
+    {
+        "type": "hair",
+        "style": "braid",
+        "color": "purple",
+        "src": "../assets/Squares (7).jpg",
+        "stock": 10,
+        "price": 35
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "light_blue",
+        "src": "../assets/Squares (36).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "blue",
+        "src": "../assets/Squares (20).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "yellow",
+        "src": "../assets/Squares (23).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "pink",
+        "src": "../assets/Squares (24).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "green",
+        "src": "../assets/Squares (28).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "black",
+        "src": "../assets/Squares (31).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "orange",
+        "src": "../assets/Squares (32).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "skirt",
+        "style": "plain",
+        "color": "red",
+        "src": "../assets/Squares (35).jpg",
+        "stock": 10,
+        "price": 50
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "mix",
+        "src": "../assets/Squares (49).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "mix",
+        "src": "../assets/Squares (53).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "mix",
+        "src": "../assets/Squares (58).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "hue",
+        "src": "../assets/Squares (54).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "hue",
+        "src": "../assets/Squares (55).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "hue",
+        "src": "../assets/Squares (56).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "hue",
+        "src": "../assets/Squares (57).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (38).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (39).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (40).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (41).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (42).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (43).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (44).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (45).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (46).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (47).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (48).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (50).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (51).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (52).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (59).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (61).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (62).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (63).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (64).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (65).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "plain",
+        "color": "same",
+        "src": "../assets/Squares (66).jpg",
+        "stock": 10,
+        "price": 110
+    },
+    {
+        "type": "fullBody",
+        "style": "wonder_women",
+        "color": "mix",
+        "src": "../assets/Squares (60).jpg",
+        "stock": 10,
+        "price": 110
+    }
+]

@@ -14,10 +14,7 @@ const UserSchema = new Schema({
     zipCode: Number,
   },
   admin :{ type: Boolean, default: 0 },
-  favoriteSkirts: [{ type: Schema.Types.ObjectId, ref: "Skirt" }],
-  favoriteHairs: [{ type: Schema.Types.ObjectId, ref: "Hair" }],
-  favoriteBlouses: [{ type: Schema.Types.ObjectId, ref: "Blouse" }],
-  favoriteFullDoll: [{ type: Schema.Types.ObjectId, ref: "FullBody" }],
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Item" }],
 });
 
 const User = mongoose.model("User", UserSchema);
