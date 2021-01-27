@@ -68,7 +68,7 @@ export default function CategoryItems() {
     const shoppedItem = currentTarget.getAttribute("value");
     const choosenItem = items.find((item) => item._id === shoppedItem);
     let addArray = true;
-    shoppingItems.map((item, i) => {
+    shoppingItems.forEach((item, i) => {
       if (item._id === choosenItem._id) {
         shoppingItems.splice(i, 1);
         addArray = false;
@@ -78,7 +78,7 @@ export default function CategoryItems() {
       shoppingItems.unshift({ ...choosenItem, quantity: 1 });
     }
     setShoppingItems([...shoppingItems]);
-    setShoppingList(shoppingItems);
+    localStorage.setItem('squares-shopping', JSON.stringify(shoppingItems))
   };
 
   return (
