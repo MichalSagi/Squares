@@ -23,7 +23,7 @@ body {
   background-color: #fff0f1;
 }
 
-#dashboardContainer {
+#homePageContainer {
   height: 400px;
   width: 400px;
   margin: 20px auto;
@@ -40,4 +40,10 @@ body {
 .ant-table {
   border-collapse: separate;
   border-spacing: 0 1em;
+}
+
+.manuIcon {
+  font-size: x-large;
+  color: #722ed1;
+  margin-right: 10px;
 }
