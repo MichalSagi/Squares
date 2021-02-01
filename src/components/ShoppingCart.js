@@ -1,6 +1,6 @@
-import React, { useState, useContext  } from "react";
+import React, { useState, useContext } from "react";
 import { ItemsContext } from "../contexts/ItemsProvider";
-import { Table, Typography, Button, notification,  Modal } from "antd";
+import { Table, Typography, Button, notification, Modal } from "antd";
 import { DeleteTwoTone } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 
@@ -9,7 +9,7 @@ export default function ShoppingCart() {
   const { Text } = Typography;
   const [order, setOrder] = useState(items.map((item) => ({ ...item, displayPrice: item.price * item.quantity })));
   const itemContext = useContext(ItemsContext);
-  const history = useHistory()
+  const history = useHistory();
 
   const addItem = (record) => {
     let copyOrder = [...order];
@@ -56,22 +56,22 @@ export default function ShoppingCart() {
     notification.close();
   };
 
-  const deleteItem = (e) => {
-    const fiteredOrder = order.filter((item) => item._id !== e);
-    setOrder(fiteredOrder);
-    localStorage.setItem("squares-shopping", JSON.stringify(fiteredOrder.filter((item) => item._id !== e)));
+  const deleteItem = (event) => {
+    const filteredOrder = order.filter((item) => item._id !== event);
+    setOrder(filteredOrder);
+    localStorage.setItem("squares-shopping", JSON.stringify(filteredOrder.filter((item) => item._id !== event)));
   };
 
   const ordering = () => {
-    itemContext[3](order);
+    itemContext[2](order);
     localStorage.setItem("squares-shopping", "[]");
     setOrder(() => []);
-    successOrder()
+    successOrder();
   };
 
   function successOrder() {
     Modal.success({
-      content: 'Your order is on the way! Enjoy your Squares',
+      content: "Your order is on the way! Enjoy your Squares",
     });
   }
 
@@ -83,7 +83,7 @@ export default function ShoppingCart() {
     },
     {
       dataIndex: "src",
-      render: (theImageURL) => <img alt={theImageURL} src={theImageURL} style={{ height: "3%", width: "auto" }} />,
+      render: (theImageURL) => <img alt={theImageURL} src={theImageURL} style={{ height: 150, width: 'auto'}} />,
       key: "2",
     },
     {
@@ -94,15 +94,15 @@ export default function ShoppingCart() {
     {
       title: "Quantity",
       render: (record) => (
-        <>
-          <Button onClick={() => subItem(record)} type="text" style={{ margin: 2 }}>
+        <div>
+          <Button onClick={() => subItem(record)} type="text" >
             -
           </Button>
-          <Typography.Text style={{ margin: 2 }}>{record.quantity}</Typography.Text>
-          <Button onClick={() => addItem(record)} type="text" style={{ margin: 2 }}>
+          <Typography.Text >{record.quantity}</Typography.Text>
+          <Button onClick={() => addItem(record)} type="text" >
             +
           </Button>
-        </>
+        </div>
       ),
       key: "4",
     },
@@ -110,7 +110,7 @@ export default function ShoppingCart() {
       dataIndex: "_id",
       render: (record) => (
         <>
-          <Button onClick={(e) => deleteItem(record)} type="text" data-id="record">
+          <Button onClick={() => deleteItem(record)} type="text" data-id="record">
             <DeleteTwoTone twoToneColor="#722ed1" />
           </Button>
         </>
@@ -122,7 +122,7 @@ export default function ShoppingCart() {
   return (
     <div>
       {order.length ? (
-        <>
+        <div>
           <Table
             columns={columns}
             dataSource={order}
@@ -140,15 +140,13 @@ export default function ShoppingCart() {
                 totalPrice += item.displayPrice;
               });
               return (
-                <>
-                  <Table.Summary.Row>
-                    <Table.Summary.Cell>Total</Table.Summary.Cell>
-                    <Table.Summary.Cell></Table.Summary.Cell>
-                    <Table.Summary.Cell>
-                      <Text style={{ color: "#722ed1", fontWeight: 600 }}>{totalPrice} </Text>
-                    </Table.Summary.Cell>
-                  </Table.Summary.Row>
-                </>
+                <Table.Summary.Row rowkey={'summary'}>
+                  <Table.Summary.Cell>Total</Table.Summary.Cell>
+                  <Table.Summary.Cell/>
+                  <Table.Summary.Cell>
+                    <Text style={{ color: "#722ed1", fontWeight: 600 }}>{totalPrice}</Text>
+                  </Table.Summary.Cell>
+                </Table.Summary.Row>
               );
             }}
           />
@@ -160,9 +158,9 @@ export default function ShoppingCart() {
           >
             Order
           </Button>
-        </>
+        </div>
       ) : (
-        <>
+        <div>
           <h3>No Square Selected</h3>
           <Button
             key="back"
@@ -170,9 +168,9 @@ export default function ShoppingCart() {
             style={{ backgroundColor: "#722ed1", border: "none", borderRadius: 0, margin: "20px", width: "200px" }}
             onClick={() => history.goBack()}
           >
-            Go Back
+            Keep on shopping
           </Button>
-        </>
+        </div>
       )}
     </div>
   );

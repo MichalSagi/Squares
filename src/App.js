@@ -1,14 +1,13 @@
-import React, { useContext, useState, createElement } from "react";
+import React from "react";
 import "antd/dist/antd.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
+import HomePage from "./components/HomePage";
 import CategoryItems from "./components/CategoryItems";
-import Login from "./components/Login";
 import { ItemsProvider } from "./contexts/ItemsProvider";
 import "./App.css";
 import ShoppingCart from "./components/ShoppingCart";
-import { Layout } from "antd";
+import { Divider, Layout } from "antd";
 
 function App() {
   const { Header, Content } = Layout;
@@ -18,16 +17,12 @@ function App() {
       <ItemsProvider>
         <Router>
           <Layout>
-            <Header className="App" style={{ padding: 0 }}>
+            <Header className="App" style={{ position: "fixed", zIndex: 1, width: "100%" }}>
               <Navbar />
             </Header>
-          </Layout>
-          <Layout>
-            <Content className="App" style={{ position: "inherit" }}>
-              <Route path="/auth/login" exact render={() => <Login />} />
-              <Route path="/auth/register" exact render={() => <Login />} />
-              <Route path="/dashboard" exact render={() => <Dashboard />} />
-              <Route path="/" exact render={() => <Dashboard />} />
+            <Content className="App" style={{ padding: "0 50px", marginTop: 64 }}>
+              <Route path="/home" exact render={() => <HomePage />} />
+              <Route path="/" exact render={() => <HomePage />} />
               <Route path="/item" render={() => <CategoryItems />} />
               <Route path="/shopping" render={() => <ShoppingCart />} />
             </Content>

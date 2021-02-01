@@ -5,7 +5,6 @@ export const ItemsContext = createContext();
 
 export function ItemsProvider({ children }) {
   const [dullsList, setDullsList] = useState([])
-  const [orders, setOrders] = useState([])
 
   useEffect(() => {
     getAllItemsFromDB()
@@ -16,24 +15,12 @@ export function ItemsProvider({ children }) {
     setDullsList(result.data)
   }
 
-    const updateItem = async (item) => {
-    const itemToUpdate = dullsList.find(dull => dull._id === item._id)
-    await axios.put(`http://localhost:3000/item/items/:${itemToUpdate._id}`, itemToUpdate);
-    this.getAllItemsFromDB();
-  };
-
-  const getAllOrdersFromDB = async () => {
-    let result = await axios.get(`http://localhost:3000/item/shopping`)
-    setOrders(result.data)
-  }
-
-  const createOrder = async (order, client) => {
+  const createOrder = async (order) => {
     const ordered = {"items": order}
-    const user = {"user": client}
-    await axios.post(`http://localhost:3000/item/shopping`, ordered, user)
+    await axios.post(`http://localhost:3000/item/order`, ordered)
   }
 
-  const values = [dullsList, getAllItemsFromDB, updateItem, createOrder]
+  const values = [dullsList, getAllItemsFromDB, createOrder]
 
   return <ItemsContext.Provider value={values}>{children}</ItemsContext.Provider>;
 }
