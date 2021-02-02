@@ -4,18 +4,9 @@ const Item = require("../models/Item");
 const Order = require("../models/Order");
 const itemJSON = require("../json/Squares.json");
 
-const insertData = (jsonFile) => {
-  for (let item of jsonFile) {
-    const newItem = new Item(item);
-    newItem.save();
-  }
-};
-// insertData(itemJSON)
-
 itemRouter.get("/items", async (req, res) => {
-  await Item.find({}, function (err, items) {
-    res.send(items);
-  });
+  const items = await Item.find({});
+  res.send(items);
 });
 
 itemRouter.put("/items/:id", async (req, res) => {
@@ -23,30 +14,22 @@ itemRouter.put("/items/:id", async (req, res) => {
   res.send(itemUpdated);
 });
 
-itemRouter.post("/items", function (req, res) {
+itemRouter.post("/items", async (req, res) => {
   const item = new Item(req.body);
-  item.save().then((ex) => {
-    console.log(ex);
-    res.send(ex);
-  });
+  await item.save();
+  res.send(item);
 });
 
-itemRouter.post("/shopping", function (req, res) {
+itemRouter.post("/order", async (req, res) => {
   const items = req.body.items;
   const order = new Order({ items });
-  order.save().then((ex) => {
-    console.log(ex);
-    res.send(ex);
-  });
+  await order.save();
+  res.send(order);
 });
 
-itemRouter.get("/shopping", async (req, res) => {
-  await Order.find({})
-    .populate("items")
-    .populate("user")
-    .exec(function (err, orders) {
-      res.send(orders);
-    });
+itemRouter.get("/orders", async (req, res) => {
+  await Order.find({});
+  res.send(orders);
 });
 
 module.exports = itemRouter;

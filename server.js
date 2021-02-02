@@ -2,8 +2,6 @@ const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 require("dotenv").config()
-const authRoutes = require('./src/server/routes/Auth.js')
-const userRouter = require("./src/server/routes/User.js")
 const itemsRouter = require('./src/server/routes/Items.js')
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/squaresDB', { useUnifiedTopology: true , useNewUrlParser: true, useFindAndModify: false})
@@ -19,8 +17,6 @@ app.use(function (req, res, next) {
   next()
 });
 
-app.use("/auth", authRoutes)
-app.use("/user", userRouter)
 app.use('/item', itemsRouter)
 
 const { PORT } = process.env

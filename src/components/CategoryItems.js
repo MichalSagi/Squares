@@ -3,8 +3,6 @@ import { useLocation } from "react-router-dom";
 import { Card, Space } from "antd";
 import { ShoppingOutlined, ShoppingFilled, HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { ItemsContext } from "../contexts/ItemsProvider";
-import { UserContext } from "../contexts/UserProvider";
-import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function CategoryItems() {
   const location = useLocation();
@@ -12,74 +10,61 @@ export default function CategoryItems() {
   const [dullsList] = useContext(ItemsContext);
   const [items, setItems] = useState([]);
   const { Meta } = Card;
-  const [favoritesList, setFavoritesList] = useLocalStorage("favorites", []);
+  const [favoritesList, setFavoritesList] = useState(JSON.parse(localStorage.getItem('squares-favorites') || '[]'));
   const [favorites, setFavorites] = useState([]);
-  const [shoppingList, setShoppingList] = useLocalStorage("shopping", []);
+  const [shoppingList, setShoppingList]= useState(JSON.parse(localStorage.getItem('squares-shopping') ||'[]'));
   const [shoppingItems, setShoppingItems] = useState([]);
 
   useEffect(() => {
-    if (favoritesList !== 0) {
+    if (favoritesList) {
       setFavorites(favoritesList);
     }
   }, [favoritesList]);
 
   useEffect(() => {
-    if (shoppingList !== 0) {
+    if (shoppingList) {
       setShoppingItems(shoppingList);
     }
   }, []);
 
   useEffect(() => {
-    switch (page) {
-      case "skirts":
-        setItems(dullsList.filter((item) => item.type === "skirt"));
-        break;
-      case "hairs":
-        setItems(dullsList.filter((item) => item.type === "hair"));
-        break;
-      case "blouses":
-        setItems(dullsList.filter((item) => item.type === "blouse"));
-        break;
-      case "full dolls":
-        setItems(dullsList.filter((item) => item.type === "fullBody"));
-        break;
-      default:
-        console.log("no items");
-    }
+    setItems(dullsList.filter(item => item.type === 'fullBody').map(i => i.type = 'full doll'))
+    setItems(dullsList.filter(item => item.type === page))
   }, [dullsList]);
 
   const addToFavorites = ({ currentTarget }) => {
     const lovedItemID = currentTarget.getAttribute("value");
-    const choosenItem = items.find((item) => item._id === lovedItemID);
+    const chosenItem = items.find((item) => item._id === lovedItemID);
     let addArray = true;
-    favorites.map((item, i) => {
-      if (item._id === choosenItem._id) {
+    favorites.forEach((item, i) => {
+      if (item._id === chosenItem._id) {
         favorites.splice(i, 1);
         addArray = false;
       }
     });
     if (addArray) {
-      favorites.unshift(choosenItem);
+      favorites.unshift(chosenItem);
     }
     setFavorites([...favorites]);
-    setFavoritesList(favorites);
+    localStorage.setItem('squares-favorites', JSON.stringify(favorites))
   };
 
+  console.log(favoritesList)
   const addToShoppingCart = ({ currentTarget }) => {
     const shoppedItem = currentTarget.getAttribute("value");
-    const choosenItem = items.find((item) => item._id === shoppedItem);
+    const chosenItem = items.find((item) => item._id === shoppedItem);
     let addArray = true;
-    shoppingItems.map((item, i) => {
-      if (item._id === choosenItem._id) {
+    shoppingItems.forEach((item, i) => {
+      if (item._id === chosenItem._id) {
         shoppingItems.splice(i, 1);
         addArray = false;
       }
     });
     if (addArray) {
-      shoppingItems.unshift({ ...choosenItem, quantity: 1 });
+      shoppingItems.unshift({ ...chosenItem, quantity: 1 });
     }
     setShoppingItems([...shoppingItems]);
-    setShoppingList(shoppingItems);
+    localStorage.setItem('squares-shopping', JSON.stringify(shoppingItems))
   };
 
   return (
