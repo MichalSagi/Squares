@@ -28,7 +28,7 @@ export default function CategoryItems() {
   }, []);
 
   useEffect(() => {
-    setItems(dullsList.filter(item => item.type === 'fullBody').map(i => i.type = 'full doll'))
+    dullsList.filter(item => item.type === 'fullBody').map(i => i.type = 'full doll')
     setItems(dullsList.filter(item => item.type === page))
   }, [dullsList]);
 
